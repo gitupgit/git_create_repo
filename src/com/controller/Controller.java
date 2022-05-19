@@ -189,11 +189,11 @@ public class Controller implements ActionListener,ListSelectionListener {
             JFileChooser fc = new JFileChooser();
             int result = fc.showSaveDialog(frame);
             if (result == JFileChooser.APPROVE_OPTION) {
-                File headerFile = fc.getSelectedFile();
-                FileWriter hfw = new FileWriter(headerFile);
-                hfw.write(headers);
-                hfw.flush();
-                hfw.close();
+                File file = fc.getSelectedFile();
+                FileWriter fw = new FileWriter(file);
+                fw.write(headers);
+                fw.flush();
+                fw.close();
                 result = fc.showSaveDialog(frame);
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File lineFile = fc.getSelectedFile();
